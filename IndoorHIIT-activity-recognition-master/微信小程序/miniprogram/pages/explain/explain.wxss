@@ -1,0 +1,80 @@
+/* miniprogram/pages/explain/explain.wxss */
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.total image {
+  height: 150rpx;
+  margin-top: 20rpx;
+}
+
+.title {
+  margin: 30rpx 0 30rpx 0;
+  font-size: 42rpx;
+  font-weight: bolder;
+}
+
+.introduct {
+  margin: 0 20rpx 0 20rpx;
+}
+
+.introduct text {
+  color: gray;
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+
+.main {
+  margin: 40rpx 20rpx 20rpx 20rpx;
+}
+
+.main text {
+  display: inline-block;
+  margin-bottom: 20rpx;
+  line-height: 50rpx;
+}
+
+.main text:nth-child(1) {
+  border-left: #fe3265 10rpx solid;
+}
+
+.main text:nth-child(2) {
+  border-left: #4264fa 10rpx solid;
+}
+
+.main text:nth-child(3) {
+  border-left: #d9204f 10rpx solid;
+}
+
+.main text:nth-child(4) {
+  border-left: #fe6152 10rpx solid;
+}
+
+.entry {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rpx;
+}
+
+.entry button {
+  color: white;
+  border-radius: 15rpx;
+}
+
+.entry button:nth-child(1) {
+  background: #4d98fe;
+  border-radius: 15rpx;
+  margin-left: 60rpx;
+}
+
+.entry button:nth-child(2) {
+  background: #55b682;
+  border-radius: 15rpx;
+  margin-right: 60rpx;
+}

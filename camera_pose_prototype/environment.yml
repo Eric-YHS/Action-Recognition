@@ -1,0 +1,13 @@
+name: pose-prototype
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - mediapipe
+      - opencv-python
+      - imageio
+      - imageio-ffmpeg
+      - fastapi
+      - uvicorn

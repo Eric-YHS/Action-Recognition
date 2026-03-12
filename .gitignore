@@ -1,0 +1,49 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor and IDE files
+.idea/
+.vscode/
+*.iml
+
+# Python cache and local environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+env/
+ENV/
+
+# Node / WeChat Mini Program dependencies
+node_modules/
+miniprogram_npm/
+
+# Local config and secrets
+.env
+.env.*
+*.local
+project.private.config.json
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*.orig
+
+# Project-specific generated outputs
+camera_pose_prototype/outputs/
+_video_contact_sheets/
+_video_contact_sheets_overview.jpg

@@ -1,0 +1,18 @@
+<!--miniprogram/pages/explain/explain.wxml-->
+<view class="total">
+  <image src="../image/3.gif" mode="aspectFill"></image>
+  <view class="title">运动姿态检测app说明</view>
+  <view class="introduct">
+    <text space="ensp">  小程序用于采集动作过程中的六轴数据，并用于机器学习算法当中，进行实时动作识别</text>
+  </view>
+  <view class="main">
+    <text space="ensp"> 1. 打开小程序后，根据个人情况选择手机系统（必填）和身份信息（选填或不填），点击动作可以查看相应动作示范\n</text>
+    <text space="ensp"> 2. 进入动作示范后，请认真阅读注意事项，准备好后请点击“开始采集此动作”\n</text>
+    <text space="ensp"> 3. 采集过程中，请根据语音提示进行采集。如果是第一次采集，可以进入采集页面后，点击“重新采集”进行多次尝试，未经提交的数据不会有任何影响\n</text>
+    <text space="ensp"> 4. 成功采集后再点击“提交数据”，显示提交成功后，代表成功完成一次采集\n</text>
+  </view>
+  <view class="entry">
+    <button style="width:150px;" bindtap="gotoHome">开始采集</button>
+    <button style="width:150px;" bindtap="gotoTest">动作识别</button>
+  </view>
+</view>

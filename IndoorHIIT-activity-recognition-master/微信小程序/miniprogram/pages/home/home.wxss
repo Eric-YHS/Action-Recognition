@@ -1,0 +1,141 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.home {
+  background: white;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.inputbox {
+  text-align: center;
+  height: 140rpx;
+  line-height: 140rpx;
+  font-weight: bolder;
+  font-size: 45rpx;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: 35rpx;
+}
+
+.infotitle {
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.name {
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rpx;
+  border: 1rpx solid gray;
+}
+
+.name text {
+  height: 100%;
+  line-height: 90rpx;
+  margin-right: 30rpx;
+  border-right: 1rpx solid gray;
+}
+
+.info view text {
+  width: 40%;
+  padding-left: 5%;
+}
+
+.info view input {
+  width: 55%;
+}
+
+.pickerclass {
+  height: 70rpx;
+  border: 1rpx solid gray;
+  padding-top: 20rpx;
+}
+
+.pickerclass view:nth-child(1) {
+  display: inline;
+  width: 40%;
+  padding-left: 5%;
+  margin-right: 20rpx;
+}
+
+.pickerclass view:nth-child(2) {
+  color: #878987;
+  display: inline-block;
+  width: 55%;
+}
+
+.chooseAct {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+
+.chooseAct view:nth-child(1) {
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.chooseAct view:nth-child(n+2) {
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx 15rpx 10rpx 15rpx;
+}
+
+.chooseAct view text {
+  color: white;
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  line-height: 200rpx;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  /* border: 1rpx solid #878987; */
+}
+
+.text1 {
+  background-color: #ff7f8c;
+  margin-right: 10rpx;
+}
+
+.text2 {
+  background-color: #19eebe;
+  margin-left: 10rpx;
+}
+
+.text3 {
+  background-color: #f8ce17;
+  margin-right: 10rpx;
+}
+
+.text4 {
+  background-color: #4d98fe;
+  margin-left: 10rpx;
+}
+
+.explain {
+  display: flex;
+  margin-top: 30rpx;
+  justify-content: center;
+}
+
+.explain text {
+  color: #1a0dab;
+  text-decoration: underline;
+}

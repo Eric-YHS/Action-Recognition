@@ -1,0 +1,10 @@
+<!--miniprogram/pages/http/http.wxml-->
+<view class="Internet">
+  <view class="title">数据传输测试页面</view>
+  <view>域名测试：</view>
+  <input placeholder="输入发送值" bindinput="inputvalue"></input>
+  <button bindtap="sendmsg">发送</button>
+  <text>返回值：</text>
+  <text>{{result}}</text>
+</view>
+<text  space="ensp"> 四个动作采集数分别为：1.{{activity1}}  2.{{activity2}}  3.{{activity3}}  4.{{activity4}}</text>

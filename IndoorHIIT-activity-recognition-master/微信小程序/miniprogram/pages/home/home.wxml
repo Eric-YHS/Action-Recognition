@@ -1,0 +1,38 @@
+<scroll-view class="home" scroll-y>
+  <view class="inputbox">运动姿态数据采集app</view>
+
+  <view class="info">
+    <view class="infotitle">个人信息填写</view>
+    <view class="name">
+      <text>您的姓名(选填):</text>
+      <input placeholder="请填写您的姓名" bindinput="nameFun"></input>
+    </view>
+    <picker mode="selector" range="{{ageselect}}" bindchange="agechange" class="pickerclass">
+      <view>您的年龄(选填):</view>
+      <view>{{age}}</view>
+    </picker>
+    <picker mode="selector" bindchange="heightchange" range="{{heightselect}}" class="pickerclass">
+      <view>您的身高(选填):</view>
+      <view>{{height}}</view>
+    </picker>
+    <picker mode="selector" bindchange="typechange" range="{{typeselect}}" class="pickerclass">
+      <view>您的机型(必填):</view>
+      <view>{{type}}</view>
+    </picker>
+  </view>
+
+  <view class="chooseAct">
+    <view class="acttitle">点击查看动作示范</view>
+    <view>
+      <text bindtap="chooseWhich1" class="text1">徒手侧平举</text>
+      <text bindtap="chooseWhich2" class="text2">前后交叉小跑</text>
+    </view>
+    <view>
+      <text bindtap="chooseWhich3" class="text3">开合跳</text>
+      <text bindtap="chooseWhich4" class="text4">半蹲</text>
+    </view>
+  </view>
+  <view class="explain" bindtap="gotoExplain">
+    <text>管理员入口</text>
+  </view>
+</scroll-view>

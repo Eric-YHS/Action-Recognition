@@ -1,0 +1,27 @@
+<!--miniprogram/pages/record/record.wxml-->
+<view class="record">
+  <view class="loading">
+    <view class="{{commit==0?'':'loadingcolor'}}">{{commit==0?'正在采集中......':''}}{{commit==1?'采集成功,请提交数据':''}}{{commit == 2?'提交成功！':''}}{{commit==3?'等待采集开始':''}}</view>
+    <image src="../image/1.gif" mode="aspectFit"></image>
+  </view>
+
+  <view class="info">
+    <view>1.进入页面3-5秒后，自动开始采集</view>
+    <view>2.如采集数据失误，点击重新采集即可</view>
+    <view>3.显示"采集成功"后，填写动作次数，并点击提交数据，即可完成采集</view>
+    <view>4.点击重新采集可以开始新一轮采集</view>
+  </view>
+
+  <form>
+    <view class="inputnum">
+      <text>动作次数：</text>
+      <input placeholder="点击输入20秒内，共完成几次动作" bindinput="numberFun" type="number"></input>
+    </view>
+
+    <view class="choosebutton">
+      <button bindtap="giveup">放弃采集</button>
+      <button bindtap="redata">重新采集</button>
+      <button bindtap="savedata" form-type="reset">提交数据</button>
+    </view>
+  </form>
+</view>

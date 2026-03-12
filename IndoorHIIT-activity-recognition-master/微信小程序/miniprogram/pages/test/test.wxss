@@ -1,0 +1,130 @@
+/* miniprogram/pages/test/test.wxss */
+
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  width: 90%;
+  height: 150rpx;
+  line-height: 150rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+  color: white;
+  background: skyblue;
+  border-radius: 25rpx;
+  margin: 40rpx 0rpx -50rpx 0rpx;
+}
+
+.img {
+  margin-top: -70rpx;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx 20rpx 0 20rpx;
+}
+
+.info {
+  border: 1rpx solid skyblue; 
+  padding: 20rpx 20rpx 20rpx 20rpx; 
+  border-radius: 25rpx; 
+  margin: -110rpx 20rpx 0rpx 20rpx;
+  line-height: 45rpx;
+}
+
+.middle view{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-weight: bold;
+}
+
+.middle view text {
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  border-top: 1rpx solid black;
+  border-left: 1rpx solid black;
+}
+
+.text1 {
+  color: #ff7f8c;
+}
+
+.text2 {
+  color: #19eebe;
+  border-right: 1rpx solid black;
+}
+
+.text3 {
+  color: #f8ce17;
+  border-bottom: 1rpx solid black;
+}
+
+.text4 {
+  color: #4d98fe;
+  border-bottom: 1rpx solid black;
+  border-right: 1rpx solid black;
+}
+
+.tag5 {
+  background-color: #E3F0FC;
+}
+
+.play {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.play picker {
+  margin-top: -5rpx;
+}
+
+.gray {
+  color: slategrey;
+}
+
+.bottom {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom button:nth-child(1) {
+  font-size: 33rpx;
+  color: white;
+  background: #01BC87;
+  border-radius: 15rpx;
+  margin-left: 60rpx;
+}
+
+.bottom button:nth-child(2) {
+  font-size: 33rpx;
+  color: #B8C7CA;
+  border: 4rpx solid #C0C0C0;
+  border-radius: 25rpx;
+  margin-right: 60rpx;
+}
+
+.problem {
+  color: gray;
+  text-decoration: underline;
+  margin-top: 20rpx;
+  text-align: center;
+}

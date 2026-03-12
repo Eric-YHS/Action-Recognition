@@ -1,0 +1,20 @@
+<!--miniprogram/pages/tips/tips.wxml-->
+<view class="tips">
+  <view class="title">
+    <text style="color:{{color}}">{{actname}}\t</text>
+    <text>动作示范如下:</text>
+  </view>
+  <view class="showimg">
+    <image src="{{imgsrc}}" mode="aspectFit"></image>
+    <view>\n（图片来源：Keep）</view>
+  </view>
+
+  <view class="notice">
+    <view>注意事项：</view>
+    <view>1：在测试时，请将手机握在左手，手机背部面向手心，手机屏幕朝外</view>
+    <view>2：采集时间在20秒左右，采集期间会有语音提示，请提前将手机音量打开</view>
+    <view>3：采集时请自行记录20秒内完成动作的次数，并在采集完成后填写在页面中</view>
+  </view>
+
+  <button bindtap="startGet" type="primary">开始采集此动作</button>
+</view>

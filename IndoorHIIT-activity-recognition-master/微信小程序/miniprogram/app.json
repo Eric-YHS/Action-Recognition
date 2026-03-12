@@ -1,0 +1,19 @@
+{
+  "pages": [  
+    "pages/explain/explain",
+    "pages/test/test",
+    "pages/http/http",
+    "pages/home/home",
+    "pages/tips/tips",
+    "pages/record/record"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1E407F",
+    "navigationBarTitleText": "运动姿态检测",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
