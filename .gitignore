@@ -47,3 +47,7 @@ project.private.config.json
 camera_pose_prototype/outputs/
 _video_contact_sheets/
 _video_contact_sheets_overview.jpg
+
+# Local notes and internal docs
+task.md
+camera_pose_prototype/README.md
