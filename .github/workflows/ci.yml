@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Byte-compile prototype sources
+        run: python -m compileall -q camera_pose_prototype
+
+      - name: Validate action templates and model asset
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+
+          root = pathlib.Path("camera_pose_prototype")
+          templates = sorted((root / "data" / "templates").glob("action_*.json"))
+          if not templates:
+              sys.exit("data/templates 下没有模板，请先运行 build_templates.py")
+          for path in templates:
+              data = json.loads(path.read_text(encoding="utf-8"))
+              for key in ("action_id", "action_name", "template_length", "feature_dim", "sequence"):
+                  if key not in data:
+                      sys.exit(f"{path} 缺少字段 {key}")
+              length, dim = data["template_length"], data["feature_dim"]
+              for key in ("sequence", "mirror_sequence"):
+                  seq = data[key]
+                  if len(seq) != length:
+                      sys.exit(f"{path} 的 {key} 长度 {len(seq)} 与 template_length {length} 不一致")
+                  if any(len(f) != dim for f in seq):
+                      sys.exit(f"{path} 的 {key} 存在维度不等于 feature_dim({dim}) 的帧")
+              for key in ("start_pose", "end_pose", "mirror_start_pose", "mirror_end_pose"):
+                  if len(data[key]) != dim:
+                      sys.exit(f"{path} 的 {key} 维度与 feature_dim 不一致")
+              if not data["match_threshold"] > 0:
+                  sys.exit(f"{path} 的 match_threshold 异常")
+          model = root / "data" / "models" / "pose_landmarker_lite.task"
+          if not model.is_file() or model.stat().st_size < 1_000_000:
+              sys.exit("缺少 pose_landmarker_lite.task 模型文件")
+          print(f"ok: {len(templates)} 个模板，模型 {model.stat().st_size} 字节")
+          PY
+
+      - name: Validate vendored notebook JSON
+        run: |
+          python - <<'PY'
+          import json, pathlib
+
+          path = next(pathlib.Path("IndoorHIIT-activity-recognition-master").rglob("*.ipynb"))
+          nb = json.loads(path.read_text(encoding="utf-8"))
+          assert "cells" in nb, f"{path} 不是有效的 notebook"
+          print(f"ok: {path.name} 共 {len(nb['cells'])} 个 cell")
+          PY
+
+      - name: Fail on unexpectedly large tracked files
+        run: |
+          set -euo pipefail
+          # 仓库里有视频、模型和论文 PDF，体积可控；这条检查防止再误提交更大的中间产物
+          limit=$((20 * 1024 * 1024))
+          status=0
+          while IFS= read -r -d '' file; do
+            size=$(stat -c '%s' "$file")
+            if [ "$size" -gt "$limit" ]; then
+              echo "::error::$(($size / 1024 / 1024))MB 入库文件：$file"
+              status=1
+            fi
+          done < <(git ls-files -z)
+          exit $status
